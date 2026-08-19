@@ -35,17 +35,43 @@ class Bank {
     }
 
     String createAccountSummary() {
-        String sumarry = "Bank Name:" + bankName + "\n User Name: " + userName + "\n Account Number: " + accountNumber
-                + "\n Account Type" + accountType + "\n Balance" + balance;
+        String sumarry = "Bank Name: " + bankName + "\n User Name: " + userName + "\n Account Number: " + accountNumber
+                + "\n Account Type: " + accountType + "\n Balance: " + balance;
         return sumarry;
     }
 
     boolean hasMinimumBalance(double minimumBalance) {
         boolean result = false;
-        if (balance > minimumBalance) {
+        if (balance >= minimumBalance) {
             result = true;
         }
+
         return result;
+    }
+
+    boolean deposit(double amount) {
+        boolean check = false;
+        if (amount > 0) {
+            balance += amount;
+            check = true;
+        }
+        return check;
+    }
+
+    boolean withdraw(double amount) {
+        boolean check = false;
+        if (amount > 0 && amount <= balance) {
+            if (amount <= balance) {
+                this.balance = balance - amount;
+                check = true;
+            }
+        }
+
+        return check;
+    }
+
+    double checkBalance() {
+        return balance;
     }
 
 }
