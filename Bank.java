@@ -74,4 +74,14 @@ class Bank {
         return balance;
     }
 
+    void displayCompleteDetails() {
+        displayBankDetails();
+        displayUserDetails();
+        displayAccountDetails();
+    }
+
+    boolean matchesAccountNumber(long searchAccountNumber) {
+        return this.accountNumber == searchAccountNumber;
+    }
+
 }
