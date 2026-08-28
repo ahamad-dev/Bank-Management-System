@@ -75,6 +75,8 @@ public class BankApplication {
                     System.out.println(summary);
                     break;
                 case 6:
+                    System.out.println("Enter the minimumBalance");
+                    double minimumBalance = sc.nextDouble();
                     boolean checkMinimumBalance = b.hasMinimumBalance(minimumBalance);
                     if (checkMinimumBalance) {
                         System.out.println("Mininum balance is maintained.");
